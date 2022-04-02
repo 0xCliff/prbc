@@ -3,7 +3,7 @@ import { Display } from '../components';
 
 function Home() {
   return (
-    <div className='min-h-[200vh]'>
+    <div className='relative min-h-[200vh]'>
       <Display />
       <div className='text-lg px-4'>
         <p className='text-center pt-4'>
@@ -31,8 +31,7 @@ function Home() {
           >
             clubhouse eatery
           </a>
-          —it's a perfect choice for lunch or dinner! And happy hour starts at
-          5:00 pm.
+          —it's a perfect choice for dinner! And happy hour starts at 5:00 pm.
         </p>
         <p className='text-center pt-4'>
           We're always keeping busy here at the Parkes Railway Bowling Club! Be
@@ -63,6 +62,7 @@ function Home() {
         (02) 6862 2772.
       </p> */}
       </div>
+      
     </div>
   );
 }

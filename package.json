@@ -15,9 +15,14 @@
     "@fortawesome/pro-solid-svg-icons": "^6.1.1",
     "@fortawesome/pro-thin-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "graphql": "^16.3.0",
+    "graphql-request": "^4.2.0",
+    "html-react-parser": "^1.4.10",
+    "moment": "^2.29.1",
     "next": "12.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",

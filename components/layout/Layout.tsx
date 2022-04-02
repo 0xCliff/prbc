@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Footer from '../footer/Footer';
 import Header from '../header/Header';
 
 type Props = {
@@ -14,6 +15,7 @@ const Layout = ({ children }: Props) => {
       </Head>
       <Header />
       {children}
+      <Footer />
     </>
   );
 };
