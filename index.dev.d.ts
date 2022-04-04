@@ -9,4 +9,8 @@ export interface Dish {
   price: number;
   slug: string;
   vegan: boolean;
+  images?: {
+    url: string;
+  }
+  mealType: string[];
 }

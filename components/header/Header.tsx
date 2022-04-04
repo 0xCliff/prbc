@@ -9,13 +9,13 @@ function Header(props: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <header className='sticky z-10 w-full top-0 bg-primary px-6'>
+    <header className='sticky z-10 w-full top-0 bg-light px-4'>
       <div className='flex w-full h-16 items-center justify-between'>
         <div className=''>
-          <h1 className='text-white font-semibold text-4xl tracking-wide display-font'><a href='/'>PRBC</a></h1>
+          <h1 className='text-blue font-semibold text-4xl tracking-wide display-font'><a href='/'>PRBC</a></h1>
         </div>
         <button
-          className='text-white cursor-pointer'
+          className='text-blue cursor-pointer'
           onClick={() => setIsOpen(!isOpen)}
         >
           <FontAwesomeIcon icon={faBars} size='xl' />

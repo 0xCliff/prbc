@@ -4,6 +4,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 
 html,
 body {
@@ -14,6 +15,10 @@ body {
 
 .display-font {
   font-family: "Bebas Neue", cursive;
+}
+
+.outback-text {
+  font-family: 'Poiret One', cursive;
 }
 
 .text-shadow {
@@ -29,9 +34,42 @@ a {
   box-sizing: border-box;
 }
 
+.item {
+  min-height: 20rem;
+  min-width: 15rem;
+}
+
 
 @layer base {
   .bg-primary {
     @apply bg-blue-800;
   } 
+
+  .bg-light {
+    @apply bg-neutral-100;
+  }
+
+  .text-blue {
+    @apply text-blue-800;
+  }
+
+  .text-light {
+    @apply text-neutral-100;
+  }
+
+  .text-red {
+    @apply text-red-500;
+  }
+
+  .text-dark {
+    @apply text-slate-700;
+  }
+
+  .text-gray {
+    @apply text-gray-600;
+  }
+}
+
+@layer components {
+  
 }

@@ -2,21 +2,18 @@ import { gql, request } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-const getDishes = async () => {
+const getSpecials = async () => {
   const query = gql`
-    query getDishes {
-      restaurantDishes {
-        id
-        dishName
-        description
-        price
-        vegan
-        chefsSpecial
-        slug
+    query getSpecials {
+      restaurantDishes(where: { chefsSpecial: true }) {
         featuredImage {
           url
         }
-        mealType
+        slug
+        id
+        dishName
+        vegan
+        price
       }
     }
   `;
@@ -25,4 +22,4 @@ const getDishes = async () => {
   return result.restaurantDishes;
 };
 
-export default getDishes;
+export default getSpecials;
