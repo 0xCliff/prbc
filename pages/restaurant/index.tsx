@@ -1,8 +1,9 @@
 import { faCaretCircleDown } from '@fortawesome/pro-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
 import React, { useState } from 'react';
-import { SpecialsCarousel } from '../../components';
+import { DishCard, SpecialsCarousel } from '../../components';
 import { Dish } from '../../index.dev';
 import { getDishes, getSpecials } from '../../services';
 
@@ -13,23 +14,23 @@ type Props = {
 
 const Restaurant = ({ dishes, specials }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [mealType, setMealType] = useState<string>('Dinner');
+  const [mealType, setMealType] = useState<string>('Lunch');
 
   return (
     <div className='grid grid-cols-1 lg:grid-cols-2 px-4'>
-      <h4 className='text-center outback-text text-5xl py-10 font-bold'>
-        Outback Eatery
+      <h4 className='text-center outback-text text-6xl py-10 font-bold'>
+        Clubhouse Eatery
       </h4>
       <div className='h-[50vh] w-full mb-8'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <h4 className='text-5xl text-gray mb-4 outback-text font-bold'>
-          Chefs Specials
+        <h4 className='text-4xl text-gray mb-4 outback-text font-bold'>
+          Specials
         </h4>
         <SpecialsCarousel specials={specials} />
       </div>
 
       <p className='text-lg text-dark pb-2'>
-        <span className='text-red text-xl'>Welcome to the Outback Eatery,</span>{' '}
+        <span className='text-red text-xl'>Welcome to the Clubhouse Eatery,</span>{' '}
         the place to be for delicious homecooked meals. Whether you're looking
         for a romantic evening out, a birthday party for your kids, or a fun
         family outing for the whole gang, we've got you covered. Our catered
@@ -43,12 +44,12 @@ const Restaurant = ({ dishes, specials }: Props) => {
 
       <div className='my-4'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <h4 className='text-5xl text-gray mb-4 outback-text font-bold'>Menu</h4>
+        <h4 className='text-4xl text-gray mb-4 outback-text font-bold'>Menu</h4>
 
         <div className='flex items-center justify-center'>
           <div className='relative'>
             <button
-              className='bg-primary px-10 h-10 rounded-lg flex items-center text-light text-lg'
+              className='bg-red px-10 h-10 rounded-lg flex items-center text-light text-lg'
               type='button'
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -60,26 +61,57 @@ const Restaurant = ({ dishes, specials }: Props) => {
               />
             </button>
             {isOpen && (
-              <ul className='p-2' aria-labelledby='dropdownMenuButton1'>
+              <motion.ul
+                initial={{
+                  opacity: 0,
+                  y: '-5vh',
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: 'spring',
+                    stiffness: 60,
+                  },
+                }}
+                onClick={() => setIsOpen(!isOpen)}
+                className='p-2'
+                aria-labelledby='dropdownMenuButton1'
+              >
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
-                  Lunch
+                  <button
+                    className='w-full h-full'
+                    onClick={() => setMealType('Lunch')}
+                  >
+                    Lunch
+                  </button>
                 </li>
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
-                  Dinner
+                  <button
+                    className='w-full h-full'
+                    onClick={() => setMealType('Dinner')}
+                  >
+                    Dinner
+                  </button>
                 </li>
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
-                  Deserts
+                  <button
+                    className='w-full h-full'
+                    onClick={() => setMealType('Desert')}
+                  >
+                    Desert
+                  </button>
                 </li>
-              </ul>
+              </motion.ul>
             )}
           </div>
         </div>
       </div>
 
-      <div className='border w-full min-h-[60vh] rounded-lg p-2'>
-        {dishes.map((dish) => (
-          <p>{dish.dishName}</p>
-        ))}
+      <div className='border w-full min-h-[80vh] rounded-lg p-2 overflow-hidden'>
+        {dishes.map(
+          (dish) => dish.mealType.includes(mealType) && <DishCard dish={dish} />
+        )}
       </div>
     </div>
   );

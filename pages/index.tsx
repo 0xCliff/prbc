@@ -1,70 +1,49 @@
+import { GetStaticProps } from 'next';
 import React from 'react';
-import { Display } from '../components';
+import { RecentCarousel } from '../components';
+import { Post } from '../index.dev';
+import { getPosts } from '../services';
 
-function Home() {
+type Props = {
+  posts: Post[];
+};
+
+function Home({ posts }: Props) {
   return (
-    <div className='relative min-h-[200vh]'>
-      <Display />
+    <div className='relative min-h-screen'>
       <div className='text-lg px-4'>
-        <p className='text-center pt-4'>
+        <p className=''>
           The{' '}
-          <span className='text-xl font-bold'>Parkes Railway Bowling Club</span>{' '}
-          is a lawn bowling & social club that offers{' '}
-          <a
-            href='/bowls/social'
-            className='border-blue-500 border-r border-b pr-[3px] pl-1 pb-[2px] shadow-md'
-          >
-            barefoot bowls
-          </a>{' '}
-          and functions for the Parkes community.
+          <span className='text-blue text-xl font-bold'>Parkes Railway Bowling Club</span>{' '}
+          is a lawn bowling & social club that offers barefoot bowls and
+          functions for the Parkes community.
         </p>
-        {/* <p className='text-center pt-4'>
-        Our club President is Tony Latter, and our Bowls Secretary is Paul
-        Lewin.
-      </p> */}
-        <p className='text-center pt-4'>
+        <p className='pt-4'>
           Friday night is raffle night, which starts at 7 pm. Also, be sure to
-          check out the{' '}
-          <a
-            href='/restaurant'
-            className='border-blue-500 border-r border-b pr-[3px] pl-1 pb-[2px] shadow-md'
-          >
-            clubhouse eatery
-          </a>
-          —it's a perfect choice for dinner! And happy hour starts at 5:00 pm.
+          check out the clubhouse eatery —it's a perfect choice for dinner! And
+          happy hour starts at 5:00 pm.
         </p>
-        <p className='text-center pt-4'>
+        <p className='pt-4'>
           We're always keeping busy here at the Parkes Railway Bowling Club! Be
           sure to check back here for our latest <br />
-          <a
-            href='/news'
-            className='border-blue-500 border-r border-b pr-[3px] pl-1 pb-[2px] shadow-md'
-          >
-            Club news
-          </a>
-          ,{' '}
-          <a
-            href='/draw'
-            className='border-blue-500 border-r border-b pr-[3px] pl-1 pb-[2px] shadow-md'
-          >
-            bowls draw
-          </a>
-          , and
-          <a
-            href='/events'
-            className='border-blue-500 border-r border-b pr-[3px] pl-1 pb-[2px] shadow-md'
-          >
-            upcoming events.
-          </a>
+          Club news , bowls draw , and upcoming events.
         </p>
-        {/* <p className='text-center pt-4'>
-        Or If you'd like to contact us, please feel free to give us a call at
-        (02) 6862 2772.
-      </p> */}
       </div>
-      
+
+      <RecentCarousel posts={posts} />
     </div>
   );
-}
+};
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts: Post[] = (await getPosts()) || [];
+
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  };
+};
