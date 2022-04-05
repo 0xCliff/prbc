@@ -17,7 +17,7 @@ export interface Post {
   postType: string[];
   id: string;
   title: string;
-  featuredImage: {
+  featuredImg: {
     url: string;
   };
   excerpt: string;
@@ -48,4 +48,12 @@ export interface Comment {
   name: string;
   email: string;
   comment: string;
+}
+
+export interface Gallery {
+  name: string;
+  image: {
+    url: string;
+  }
+  description: string;
 }

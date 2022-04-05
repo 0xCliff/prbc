@@ -8,7 +8,7 @@ const Footer = (props: Props) => {
   return (
     <div className='bg-light'>
       <div className='text-blue flex flex-col items-center justify-center py-4'>
-        <h2 className='text-5xl display-font font-semibold py-6'>PRBC</h2>
+        <h2 className='text-5xl display-font font-thin py-6'>PRBC</h2>
         <table className='table-fixed mb-6 w-80'>
           <tbody>
             <tr>
@@ -48,7 +48,7 @@ const Footer = (props: Props) => {
           </a>
         </div>
         <p className='text-center text-lg pt-4 px-4'>
-          If you'd like to contact us, please feel free to give us a call at
+          If you&apos;d like to contact us, please feel free to give us a call at
           (02) 6862 2772.
         </p>
       </div>

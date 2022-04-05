@@ -1,10 +1,10 @@
-import {NextRequest} from 'next/server';
 import {GraphQLClient, gql} from 'graphql-request';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 const GraphCMSToken = process.env.GRAPHCMS_TOKEN;
 
-export default async function postCommentAPI(req: NextRequest, res: any) {
+export default async function postCommentAPI(req: NextApiRequest, res: NextApiResponse) {
   const client: GraphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
       authorization: `Bearer ${GraphCMSToken}`,

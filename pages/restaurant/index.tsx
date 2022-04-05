@@ -23,28 +23,28 @@ const Restaurant = ({ dishes, specials }: Props) => {
       </h4>
       <div className='h-[50vh] w-full mb-8'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <h4 className='text-4xl text-gray mb-4 outback-text font-bold'>
+        <p className='text-4xl text-gray mb-4 outback-text font-bold'>
           Specials
-        </h4>
+        </p>
         <SpecialsCarousel specials={specials} />
       </div>
 
       <p className='text-lg text-dark pb-2'>
         <span className='text-red text-xl'>Welcome to the Clubhouse Eatery,</span>{' '}
-        the place to be for delicious homecooked meals. Whether you're looking
+        the place to be for delicious homecooked meals. Whether you&apos;re looking
         for a romantic evening out, a birthday party for your kids, or a fun
-        family outing for the whole gang, we've got you covered. Our catered
-        functions are perfect for any occasion and we're excited to meet you!
+        family outing for the whole gang, we&apos;ve got you covered. Our catered
+        functions are perfect for any occasion and we&apos;re excited to meet you!
       </p>
       <p className='text-lg text-dark pb-2'>
-        We know you'll love our social bar and raffles as much as our
+        We know you&apos;ll love our social bar and raffles as much as our
         scrumptious menu items. Come in and try our famous chicken Schnitznel or
         our succulent steaks today!
       </p>
 
       <div className='my-4'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <h4 className='text-4xl text-gray mb-4 outback-text font-bold'>Menu</h4>
+        <p className='text-4xl text-gray mb-4 outback-text font-bold'>Menu</p>
 
         <div className='flex items-center justify-center'>
           <div className='relative'>

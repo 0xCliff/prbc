@@ -9,13 +9,14 @@ type Props = {
 };
 
 const DishCard = ({ dish }: Props) => {
-  console.log(dish);
+  
   return (
     <div className='flex items-center w-full h-[18%] bg-white rounded-lg mb-4 overflow-hidden'>
       <div className='flex h-full w-40'>
         <Image
           height='100'
           width='120'
+          alt={dish.dishName}
           src={dish.featuredImage.url}
           className='pointer-events-none object-cover'
         />

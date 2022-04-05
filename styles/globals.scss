@@ -39,6 +39,10 @@ a {
   min-width: 15rem;
 }
 
+.gallery-item {
+  min-height: 20rem;
+  min-width: 22rem;
+}
 
 @layer base {
   .bg-primary {

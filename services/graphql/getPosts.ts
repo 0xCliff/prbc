@@ -5,29 +5,31 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 const getPosts = async () => {
   const query = gql`
     query getPosts {
-      id
-      title
-      excerpt
-      content {
-        raw
-      }
-      categories {
-        name
-        slug
-      }
-      contentEditor {
+      posts(last: 4) {
         id
-        fullName
-        image {
+        title
+        excerpt
+        content {
+          raw
+        }
+        categories {
+          name
+          slug
+        }
+        contentEditor {
+          id
+          fullName
+          image {
+            url
+          }
+          bio
+        }
+        slug
+        featuredImg {
           url
         }
-        bio
+        createdAt
       }
-      slug
-      featuredImg {
-        url
-      }
-      createdAt
     }
   `;
 

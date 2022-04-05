@@ -4,7 +4,6 @@ import { Dish } from '../../index.dev';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSeedling } from '@fortawesome/pro-duotone-svg-icons';
-import DishCard from '../card/DishCard';
 
 type Props = {
   specials?: Dish[];
@@ -33,11 +32,12 @@ const SpecialsCarousel = ({ specials }: Props) => {
           <motion.div
             key={special.id}
             className='item relative shadow-md rounded-lg mr-4 p-2
-            bg-gradient-to-b from-neutral-900 via-transparent'
+            bg-gradient-to-b from-neutral-900/80 via-transparent'
           >
             <span className='text-light text-xl'>{special.dishName}</span>
             <Image
               layout='fill'
+              alt={special.dishName}
               src={special.featuredImage.url}
               className='-z-10 rounded-lg pointer-events-none object-cover'
             />
