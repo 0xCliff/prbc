@@ -19,28 +19,58 @@ const Restaurant = ({ dishes, specials }: Props) => {
   return (
     <div className='grid grid-cols-1 lg:grid-cols-2 px-4'>
       <h4 className='text-center outback-text text-6xl py-10 font-bold'>
-        Clubhouse Eatery
+        Clubhouse Bar & Eatery
       </h4>
-      <div className='h-[50vh] w-full mb-8'>
+
+      <div className='h-[45vh] w-full mb-4'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <p className='text-4xl text-gray mb-4 outback-text font-bold'>
-          Specials
-        </p>
+        <p className='text-4xl text-gray outback-text font-bold mb-4'>Specials</p>
         <SpecialsCarousel specials={specials} />
       </div>
 
       <p className='text-lg text-dark pb-2'>
-        <span className='text-red text-xl'>Welcome to the Clubhouse Eatery,</span>{' '}
-        the place to be for delicious homecooked meals. Whether you&apos;re looking
-        for a romantic evening out, a birthday party for your kids, or a fun
-        family outing for the whole gang, we&apos;ve got you covered. Our catered
-        functions are perfect for any occasion and we&apos;re excited to meet you!
+        <span className='text-red text-xl'>
+          Welcome to the Clubhouse Bar & Eatery,
+        </span>{' '}
+        the place to be for delicious homecooked meals. Whether you&apos;re
+        looking for a romantic evening out, a birthday party for your kids, or a
+        fun family outing for the whole gang, we&apos;ve got you covered. Our
+        catered functions are perfect for any occasion and we&apos;re excited to
+        meet you!
       </p>
-      <p className='text-lg text-dark pb-2'>
+      <p className='text-lg text-dark pb-4'>
         We know you&apos;ll love our social bar and raffles as much as our
         scrumptious menu items. Come in and try our famous chicken Schnitznel or
         our succulent steaks today!
       </p>
+
+      <div className='border-b border-neutral-200 mt-4'>
+        <p className='text-4xl text-center text-gray outback-text font-bold underline decoration-red-400'>
+          Open Hours
+        </p>
+        <table className='p-2 mt-4 table-fixed w-full text-red '>
+          <tbody>
+            <tr className='flex flex-col w-full'>
+              <td className='text-dark underline decoration-red-400'>Friday</td>
+              <td className='w-40'>6:00pm - 8:30pm</td>
+            </tr>
+            <tr className='flex flex-col w-full'>
+              <td className='text-dark underline decoration-red-400'>Saturday</td>
+              <td>12:00pm - 2:30pm,</td>
+              <td>6:00pm - 8:30pm</td>
+            </tr>
+            <tr className='flex flex-col w-full'>
+              <td className='text-dark underline decoration-red-400'>Sunday</td>
+              <td>12:00pm - 2:30pm</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p className='text-center py-4 px-4'>
+          Dine In or Takeaway. For reservations or enquires contact us on{' '}
+          <span className='text-red'>0419 355 914</span>
+        </p>
+      </div>
 
       <div className='my-4'>
         <span className='text-lg text-red font-thin'>From the</span>
@@ -53,7 +83,7 @@ const Restaurant = ({ dishes, specials }: Props) => {
               type='button'
               onClick={() => setIsOpen(!isOpen)}
             >
-              Choose a Meal type
+              Choose from the menu
               <FontAwesomeIcon
                 icon={faCaretCircleDown}
                 size='lg'
@@ -83,7 +113,15 @@ const Restaurant = ({ dishes, specials }: Props) => {
                     className='w-full h-full'
                     onClick={() => setMealType('Lunch')}
                   >
-                    Lunch
+                    Breads
+                  </button>
+                </li>
+                <li className='border-b border-slate-900 p-2 text-center text-lg'>
+                  <button
+                    className='w-full h-full'
+                    onClick={() => setMealType('Lunch')}
+                  >
+                    Kids Meals
                   </button>
                 </li>
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
@@ -91,7 +129,7 @@ const Restaurant = ({ dishes, specials }: Props) => {
                     className='w-full h-full'
                     onClick={() => setMealType('Dinner')}
                   >
-                    Dinner
+                    Mains
                   </button>
                 </li>
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
@@ -100,6 +138,14 @@ const Restaurant = ({ dishes, specials }: Props) => {
                     onClick={() => setMealType('Desert')}
                   >
                     Desert
+                  </button>
+                </li>
+                <li className='border-b border-slate-900 p-2 text-center text-lg'>
+                  <button
+                    className='w-full h-full'
+                    onClick={() => setMealType('Desert')}
+                  >
+                    Sides & Sauces
                   </button>
                 </li>
               </motion.ul>

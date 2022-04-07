@@ -35,7 +35,7 @@ const Nav = ({ setIsOpen }: Props) => {
   if (error) return <div>Error</div>;
 
   return (
-    <div className='flex flex-col justify-end bg-light fixed top-0 left-0 w-full min-h-screen z-20'>
+    <div className='flex flex-col justify-center bg-light fixed top-0 left-0 w-full min-h-screen z-20'>
       <FontAwesomeIcon
         onClick={() => setIsOpen(false)}
         icon={faArrowRightFromArc}
@@ -43,40 +43,50 @@ const Nav = ({ setIsOpen }: Props) => {
         className='fixed top-6 right-4 text-blue'
       />
 
-      <nav className='mb-8 flex flex-col items-center h-40 justify-center list-none'>
-        <li className='text-4xl display-font mb-1'>
-          <button
-            onClick={() => setIsOpen(false)}
-            className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
-          >
-            <Link href='/bowls'>Bowls</Link>
-          </button>
-        </li>
-        <li className='text-4xl display-font mb-1'>
-          <button
-            onClick={() => setIsOpen(false)}
-            className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
-          >
-            <Link href='/restaurant'>Clubhouse Eatery</Link>
-          </button>
-        </li>
-        <li className='text-4xl display-font mb-1'>
-          <button
-            onClick={() => setIsOpen(false)}
-            className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
-          >
-            <Link href='/news'>Club News</Link>
-          </button>
-        </li>
-        <li className='text-4xl display-font mb-1'>
-          <button
-            onClick={() => setIsOpen(false)}
-            className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
-          >
-            <Link href='/posts/events'>Events</Link>
-          </button>
-        </li>
-      </nav>
+      <div className='mb-8 h-60 list-none'>
+        <nav className='flex flex-col items-center justify-center'>
+          <li className='text-4xl display-font mb-1'>
+            <button
+              onClick={() => setIsOpen(false)}
+              className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
+            >
+              <Link href='/'>Home</Link>
+            </button>
+          </li>
+          <li className='text-4xl display-font mb-1'>
+            <button
+              onClick={() => setIsOpen(false)}
+              className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
+            >
+              <Link href='/bowls'>Bowls</Link>
+            </button>
+          </li>
+          <li className='text-4xl display-font mb-1'>
+            <button
+              onClick={() => setIsOpen(false)}
+              className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
+            >
+              <Link href='/restaurant'>Restaurant</Link>
+            </button>
+          </li>
+          <li className='text-4xl display-font mb-1'>
+            <button
+              onClick={() => setIsOpen(false)}
+              className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
+            >
+              <Link href='/news'>Club News</Link>
+            </button>
+          </li>
+          <li className='text-4xl display-font mb-1'>
+            <button
+              onClick={() => setIsOpen(false)}
+              className='px-6 py-1 bg-primary rounded-lg text-light shadow-md'
+            >
+              <Link href='/posts/events'>Events</Link>
+            </button>
+          </li>
+        </nav>
+      </div>
 
       <div className='flex justify-center'>
         <a href='https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F642402229175922%2F'>
@@ -88,15 +98,9 @@ const Nav = ({ setIsOpen }: Props) => {
         </a>
       </div>
       <p className='text-center text-lg text-blue pt-4 px-4 mb-4'>
-        If you&apos;d like to contact us, please feel free to give us a call at (02)
-        6862 2772.
+        If you&apos;d like to contact us, please feel free to give us a call at
+        (02) 6862 2772.
       </p>
-
-      {data && (
-        <div className='mb-4 px-4'>
-          <RecentCarousel posts={data?.posts} />
-        </div>
-      )}
     </div>
   );
 };

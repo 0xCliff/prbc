@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <header className='sticky z-10 w-full top-0 bg-light px-4'>
-      <div className='flex w-full h-20 items-center justify-between'>
+      <div className='flex w-full h-24 items-center justify-between'>
         <div className=''>
           <Link
             href='/'

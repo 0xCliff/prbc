@@ -35,13 +35,19 @@ a {
 }
 
 .item {
-  min-height: 20rem;
+  min-height: 18rem;
   min-width: 15rem;
 }
 
+.recent-item {
+min-height: 22rem;
+min-width: 17.5rem;
+}
+
+
 .gallery-item {
   min-height: 20rem;
-  min-width: 22rem;
+  min-width: 20rem;
 }
 
 @layer base {
