@@ -49,7 +49,7 @@ function Home({ posts, images }: Props) {
       <div className='flex flex-col py-4'>
         <p className='text-2xl font-thin py-6'>
           <span className='p-4 text-blue'>
-            <FontAwesomeIcon icon={faQuoteLeft} size='xl' />
+            <FontAwesomeIcon icon={faQuoteLeft} size='2x' />
           </span>
           Bowling at the Railway Bowling Club is an experience to remember. Our
           beautiful greens and club house provide a magnificent setting for
@@ -57,7 +57,7 @@ function Home({ posts, images }: Props) {
           and plenty of shade, cold drinks, great food, entertaining facilities
           and plenty of seating space. Come and see how fun it is!
           <span className='p-4 text-blue'>
-            <FontAwesomeIcon icon={faQuoteRight} size='xl' />
+            <FontAwesomeIcon icon={faQuoteRight} size='2x' />
           </span>
         </p>
 

@@ -10,7 +10,7 @@ export interface Dish {
   slug: string;
   vegan: boolean;
   images?: any;
-  mealType: string[];
+  type: string[];
 }
 
 export interface Post {

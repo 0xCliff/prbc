@@ -16,7 +16,7 @@ const getDishes = async () => {
         featuredImage {
           url
         }
-        mealType
+        type
       }
     }
   `;

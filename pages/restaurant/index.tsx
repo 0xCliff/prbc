@@ -111,7 +111,7 @@ const Restaurant = ({ dishes, specials }: Props) => {
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
                   <button
                     className='w-full h-full'
-                    onClick={() => setMealType('Lunch')}
+                    onClick={() => setMealType('Breads')}
                   >
                     Breads
                   </button>
@@ -119,7 +119,7 @@ const Restaurant = ({ dishes, specials }: Props) => {
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
                   <button
                     className='w-full h-full'
-                    onClick={() => setMealType('Lunch')}
+                    onClick={() => setMealType('Kids')}
                   >
                     Kids Meals
                   </button>
@@ -127,7 +127,7 @@ const Restaurant = ({ dishes, specials }: Props) => {
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
                   <button
                     className='w-full h-full'
-                    onClick={() => setMealType('Dinner')}
+                    onClick={() => setMealType('Mains')}
                   >
                     Mains
                   </button>
@@ -143,7 +143,7 @@ const Restaurant = ({ dishes, specials }: Props) => {
                 <li className='border-b border-slate-900 p-2 text-center text-lg'>
                   <button
                     className='w-full h-full'
-                    onClick={() => setMealType('Desert')}
+                    onClick={() => setMealType('Sides' || 'Sauces')}
                   >
                     Sides & Sauces
                   </button>
@@ -156,7 +156,7 @@ const Restaurant = ({ dishes, specials }: Props) => {
 
       <div className='border w-full min-h-[80vh] rounded-lg p-2 overflow-hidden'>
         {dishes.map(
-          (dish) => dish.mealType.includes(mealType) && <DishCard dish={dish} />
+          (dish) => dish.type.includes(mealType) && <DishCard dish={dish} />
         )}
       </div>
     </div>
