@@ -19,7 +19,7 @@ const RecentCarousel = ({ posts }: Props) => {
   return (
     <motion.div
       ref={carousel}
-      className='flex items-center h-[45vh] overflow-hidden cursor-grab rounded-lg'
+      className='flex items-center h-full overflow-hidden cursor-grab rounded-lg p-4 pl-2'
       whileTap={{ cursor: 'grabbing' }}
     >
       <motion.div
@@ -30,7 +30,7 @@ const RecentCarousel = ({ posts }: Props) => {
         {posts?.map((post: Post) => (
           <motion.div
             key={post.id}
-            className='flex flex-col recent-item relative shadow-md rounded-lg mr-4 bg-gradient-to-b from-neutral-900/20 via-transparent'
+            className='bg-light flex flex-col recent-item relative shadow-md rounded-lg mr-4 bg-gradient-to-b from-neutral-900/20 via-transparent'
           >
             <Image
               height={150}
@@ -42,7 +42,7 @@ const RecentCarousel = ({ posts }: Props) => {
             <div className='h-40 flex flex-col items-center absolute bottom-2 text-sm text-dark p-2'>
               <p className='self-start text-blue text-xl pb-2'>{post.title}</p>
               <p className='text-gray pb-4'>{post.excerpt}..</p>
-              <span className='shadow-md text-center bg-primary w-20 rounded text-light py-1'>
+              <span className='shadow-md text-center bg-primary p-2 rounded text-light font-semibold'>
                 <Link href={`/posts/${post.slug}`}>Read</Link>
               </span>
             </div>

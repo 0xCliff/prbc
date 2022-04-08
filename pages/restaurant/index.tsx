@@ -14,21 +14,21 @@ type Props = {
 
 const Restaurant = ({ dishes, specials }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [mealType, setMealType] = useState<string>('Lunch');
+  const [mealType, setMealType] = useState<string>('Mains');
 
   return (
     <div className='grid grid-cols-1 lg:grid-cols-2 px-4'>
-      <h4 className='text-center outback-text text-6xl py-10 font-bold'>
-        Clubhouse Bar & Eatery
+      <h4 className='text-center outback-text text-6xl py-8 font-bold'>
+        Clubhouse Catering
       </h4>
 
-      <div className='h-[45vh] w-full mb-4'>
+      <div className='h-full w-full py-8'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <p className='text-4xl text-gray outback-text font-bold mb-4'>Specials</p>
+        <p className='text-4xl text-gray outback-text font-bold'>Specials</p>
         <SpecialsCarousel specials={specials} />
       </div>
 
-      <p className='text-lg text-dark pb-2'>
+      <p className='text-lg text-dark'>
         <span className='text-red text-xl'>
           Welcome to the Clubhouse Bar & Eatery,
         </span>{' '}
@@ -38,48 +38,48 @@ const Restaurant = ({ dishes, specials }: Props) => {
         catered functions are perfect for any occasion and we&apos;re excited to
         meet you!
       </p>
-      <p className='text-lg text-dark pb-4'>
+      <p className='text-lg text-dark pt-4'>
         We know you&apos;ll love our social bar and raffles as much as our
         scrumptious menu items. Come in and try our famous chicken Schnitznel or
         our succulent steaks today!
       </p>
 
-      <div className='border-b border-neutral-200 mt-4'>
+      <div className='border-b border-neutral-200 py-8'>
         <p className='text-4xl text-center text-gray outback-text font-bold underline decoration-red-400'>
           Open Hours
         </p>
-        <table className='p-2 mt-4 table-fixed w-full text-red '>
+        <table className='p-2 my-8 table-fixed w-full text-red '>
           <tbody>
             <tr className='flex flex-col w-full'>
               <td className='text-dark underline decoration-red-400'>Friday</td>
               <td className='w-40'>6:00pm - 8:30pm</td>
             </tr>
-            <tr className='flex flex-col w-full'>
+            <tr className='flex flex-col w-full pt-4'>
               <td className='text-dark underline decoration-red-400'>Saturday</td>
               <td>12:00pm - 2:30pm,</td>
               <td>6:00pm - 8:30pm</td>
             </tr>
-            <tr className='flex flex-col w-full'>
+            <tr className='flex flex-col w-full pt-4'>
               <td className='text-dark underline decoration-red-400'>Sunday</td>
               <td>12:00pm - 2:30pm</td>
             </tr>
           </tbody>
         </table>
 
-        <p className='text-center py-4 px-4'>
+        <p className='text-center text-lg'>
           Dine In or Takeaway. For reservations or enquires contact us on{' '}
           <span className='text-red'>0419 355 914</span>
         </p>
       </div>
 
-      <div className='my-4'>
+      <div className='py-8'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <p className='text-4xl text-gray mb-4 outback-text font-bold'>Menu</p>
+        <p className='text-4xl text-gray display-font font-semibold'>Menu</p>
 
         <div className='flex items-center justify-center'>
-          <div className='relative'>
+          <div className=''>
             <button
-              className='bg-red px-10 h-10 rounded-lg flex items-center text-light text-lg'
+              className='bg-red p-4 mt-4 rounded-lg flex items-center text-light text-lg'
               type='button'
               onClick={() => setIsOpen(!isOpen)}
             >

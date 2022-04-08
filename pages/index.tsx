@@ -18,7 +18,7 @@ function Home({ posts, images }: Props) {
     <div className='relative min-h-screen px-4'>
       <div className='h-80 w-full'></div>
 
-      <div className='text-xl my-4 font-thin border-b py-8 border-neutral-200'>
+      <div className='text-xl font-thin border-b py-8 border-neutral-200'>
         <p className=''>
           <span className='text-blue text-2xl'>
             Parkes Railway Bowling Club
@@ -33,44 +33,55 @@ function Home({ posts, images }: Props) {
         </p>
         <p className='pt-4'>
           We&apos;re always keeping busy here at the Parkes Railway Bowling
-          Club! Be sure to check back here for our latest <br />
-          Club news , bowls draw , and upcoming events.
+          Club! Be sure to check back here for our latest Club news , bowls draw
+          , and upcoming events.
         </p>
       </div>
 
-      <div className='border-b py-6 border-neutral-200'>
-        <span className='text-lg text-blue font-thin'>the most</span>
-        <p className='text-4xl text-gray mb-4 outback-text font-bold'>
-          Recent Posts
-        </p>
+      <div className='h-full border-b py-8 border-neutral-200'>
+        <div className='flex items-center justify-between'>
+          <p className='text-4xl text-gray display-font font-semibold'>
+            Recent Posts
+          </p>
+          <Link href='/posts' passHref>
+            <p className='text-blue font-thin'>- View all posts</p>
+          </Link>
+        </div>
         <RecentCarousel posts={posts} />
       </div>
 
-      <div className='flex flex-col py-4'>
-        <p className='text-2xl font-thin py-6'>
-          <span className='p-4 text-blue'>
-            <FontAwesomeIcon icon={faQuoteLeft} size='2x' />
+      <div className='flex flex-col py-8 border-b border-neutral-200'>
+        <p className='text-xl font-thin'>
+          <span className='text-blue'>
+            <FontAwesomeIcon icon={faQuoteLeft} size='2x' pull='left' transform='shrink-1' />
           </span>
           Bowling at the Railway Bowling Club is an experience to remember. Our
           beautiful greens and club house provide a magnificent setting for
           social and competitive lawn bowls. You can enjoy a relaxed atmosphere
           and plenty of shade, cold drinks, great food, entertaining facilities
           and plenty of seating space. Come and see how fun it is!
-          <span className='p-4 text-blue'>
-            <FontAwesomeIcon icon={faQuoteRight} size='2x' />
+          <span className='text-blue'>
+            <FontAwesomeIcon icon={faQuoteRight} size='lg' transform='down-4 grow-8 right-10' />
           </span>
         </p>
 
-        <button className='self-center px-4 py-2 rounded-lg bg-primary text-white'>
-          <Link href='/bowls'>Find Out more</Link>
+        <button className='self-center p-4 mt-8 rounded-lg bg-primary text-light font-semibold text-lg'>
+          <Link href='/bowls'>Learn More</Link>
         </button>
       </div>
 
-      <div className='pt-2 border-b pb-8 border-neutral-200'>
-        <span className='text-lg text-blue font-thin'>Images from around</span>
-        <p className='text-4xl text-gray mb-4 outback-text font-bold'>
-          The Club
-        </p>
+      <div className='h-full py-8 border-b border-neutral-200'>
+        <div className='flex items-center justify-between'>
+          <p className='flex flex-col text-4xl text-gray outback-text font-bold'>
+          <span className='text-lg text-blue font-thin'>
+            Images from around
+          </span>{' '}
+            The Club
+          </p>
+          <Link href='/gallery' passHref>
+            <p className='text-blue font-thin'>- View all images</p>
+          </Link>
+        </div>
         <GalleryCarousel images={images} />
       </div>
     </div>

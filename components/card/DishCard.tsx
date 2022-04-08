@@ -9,9 +9,8 @@ type Props = {
 };
 
 const DishCard = ({ dish }: Props) => {
-  
   return (
-    <div className='flex items-center w-full h-[18%] bg-white rounded-lg mb-4 overflow-hidden'>
+    <div className='flex items-center w-full h-[18%] bg-light rounded-lg mb-4 overflow-clip shadow-md'>
       <div className='flex h-full w-40'>
         <Image
           height='100'

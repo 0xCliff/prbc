@@ -1,58 +1,62 @@
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+import { faMapLocationDot } from '@fortawesome/pro-duotone-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 
-type Props = {};
+const Footer = () => {
+  const [openMap, setOpenMap] = useState<boolean>(false);
 
-const Footer = (props: Props) => {
   return (
-    <div className='bg-light'>
-      <div className='text-blue flex flex-col items-center justify-center py-4'>
-        <h2 className='text-5xl display-font font-thin py-6'>PRBC</h2>
-        <table className='table-fixed mb-6 w-80'>
+    <div className='bg-light relative'>
+      <div className='text-blue flex flex-col items-center justify-center px-4'>
+        <h2 className='text-6xl text-dark display-font font-semibold py-8'>
+          PRBC
+        </h2>
+        <table className='table-fixed mb-8 w-80'>
           <tbody>
             <tr>
-              <td>Monday</td>
+              <td className='text-dark'>Monday</td>
               <td>Closed</td>
             </tr>
             <tr>
-              <td>Tuesday</td>
+              <td className='text-dark'>Tuesday</td>
               <td>Closed</td>
             </tr>
             <tr>
-              <td>Wednesday</td>
+              <td className='text-dark'>Wednesday</td>
               <td>1:00pm - 10:00pm</td>
             </tr>
             <tr>
-              <td>Thursday</td>
+              <td className='text-dark'>Thursday</td>
               <td>1:00pm - 10:00pm</td>
             </tr>
             <tr>
-              <td>Friday</td>
+              <td className='text-dark'>Friday</td>
               <td>1:00pm - late</td>
             </tr>
             <tr>
-              <td>Saturday</td>
+              <td className='text-dark'>Saturday</td>
               <td>1:00pm - late</td>
             </tr>
             <tr>
-              <td>Sunday</td>
+              <td className='text-dark'>Sunday</td>
               <td>1:00pm - 10:00pm</td>
             </tr>
           </tbody>
         </table>
 
-        <div className='flex'>
-          <a href='https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F642402229175922%2F'>
-            <FontAwesomeIcon icon={faFacebookSquare} size='4x' className='' />
-          </a>
-        </div>
-        <p className='text-center text-lg pt-4 px-4'>
-          If you&apos;d like to contact us, please feel free to give us a call at
-          (02) 6862 2772.
-        </p>
-      </div>
-      <div className='gmap_canvas'>
+        <motion.div
+        className='gmap-canvas py-8 w-full'
+        animate={{
+          opacity: openMap ? 1 : 0,
+          display: openMap ? 'block' : 'none',
+        }}
+        transition={{
+          type: 'spring',
+          stiffness: 20,
+        }}
+      >
         <iframe
           width='100%'
           height='400'
@@ -61,7 +65,24 @@ const Footer = (props: Props) => {
           frameBorder='0'
           scrolling='no'
         ></iframe>
+      </motion.div>
+
+        <div className='flex'>
+          <a href='https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F642402229175922%2F'>
+            <FontAwesomeIcon icon={faFacebookSquare} size='4x' />
+          </a>
+          <button onClick={() => setOpenMap(!openMap)} className='pl-4'>
+            <FontAwesomeIcon icon={faMapLocationDot} size='3x' swapOpacity />
+          </button>
+        </div>
       </div>
+
+      <p
+        className='text-center text-dark text-lg px-4 pb-20 py-4'
+      >
+        If you&apos;d like to contact us, please feel free to give us a call at{' '}
+        <span className='text-blue'>(02) 6862 2772</span>.
+      </p>
     </div>
   );
 };

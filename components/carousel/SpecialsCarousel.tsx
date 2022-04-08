@@ -20,7 +20,7 @@ const SpecialsCarousel = ({ specials }: Props) => {
   return (
     <motion.div
       ref={carousel}
-      className='flex items-center h-[35vh] overflow-hidden cursor-grab rounded-lg'
+      className='flex items-center h-full p-4 pl-2 overflow-hidden cursor-grab rounded-lg'
       whileTap={{ cursor: 'grabbing' }}
     >
       <motion.div

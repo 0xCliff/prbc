@@ -18,7 +18,7 @@ const GalleryCarousel = ({ images }: Props) => {
   return (
     <motion.div
       ref={carousel}
-      className='flex items-center h-[42vh] overflow-hidden cursor-grab'
+      className='flex items-center h-full p-4 pl-2 overflow-hidden cursor-grab'
       whileTap={{ cursor: 'grabbing' }}
     >
       <motion.div

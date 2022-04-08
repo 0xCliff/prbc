@@ -29,6 +29,7 @@ const getPosts = async () => {
           url
         }
         createdAt
+        postType
       }
     }
   `;

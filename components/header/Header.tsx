@@ -10,20 +10,7 @@ function Header() {
 
   return (
     <header className='sticky z-10 w-full top-0 bg-light px-4'>
-      <div className='flex w-full h-24 items-center justify-between'>
-        <div className=''>
-          <Link
-            href='/'
-            passHref
-          >
-            <Image
-              src='/logo.png'
-              alt='logo'
-              height={70}
-              width={70}
-            />
-          </Link>
-        </div>
+      <div className='flex w-full h-14 items-center justify-end'>
         <button
           className='text-blue cursor-pointer'
           onClick={() => setIsOpen(!isOpen)}
