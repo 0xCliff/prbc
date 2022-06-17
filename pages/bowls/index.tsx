@@ -25,10 +25,8 @@ const index = ({ posts, draws, results }: Props) => {
 
       <div className='py-8 text-xl font-thin'>
         <p>
-          <span className='text-blue text-2xl'>
-            Parkes Railway Bowling Club
-          </span>{' '}
-          is a fun social and recreational club.{' '}
+            The Railway Bowling Club
+          is a fun social and recreational club.
         </p>
         <p className='pt-4 border-b border-neutral-200 pb-8'>
           Bowling at the railway bowling club, you will experience the

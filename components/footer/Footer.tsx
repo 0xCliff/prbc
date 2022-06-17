@@ -46,34 +46,10 @@ const Footer = () => {
           </tbody>
         </table>
 
-        <motion.div
-        className='gmap-canvas py-8 w-full'
-        animate={{
-          opacity: openMap ? 1 : 0,
-          display: openMap ? 'block' : 'none',
-        }}
-        transition={{
-          type: 'spring',
-          stiffness: 20,
-        }}
-      >
-        <iframe
-          width='100%'
-          height='400'
-          id='gmap_canvas'
-          src='https://maps.google.com/maps?q=parkes%20railway%20bowling%20club&t=&z=17&ie=UTF8&iwloc=&output=embed'
-          frameBorder='0'
-          scrolling='no'
-        ></iframe>
-      </motion.div>
-
         <div className='flex'>
           <a href='https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F642402229175922%2F'>
             <FontAwesomeIcon icon={faFacebookSquare} size='4x' />
           </a>
-          <button onClick={() => setOpenMap(!openMap)} className='pl-4'>
-            <FontAwesomeIcon icon={faMapLocationDot} size='3x' swapOpacity />
-          </button>
         </div>
       </div>
 

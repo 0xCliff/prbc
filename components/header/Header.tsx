@@ -9,8 +9,9 @@ function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <header className='sticky z-10 w-full top-0 bg-light px-4'>
-      <div className='flex w-full h-14 items-center justify-end'>
+    <header className='sticky z-10 w-full top-0 bg-light px-4 h-16 flex justify-between'>
+      <div className=''>Bowlo</div>
+      <div className='self-center'>
         <button
           className='text-blue cursor-pointer'
           onClick={() => setIsOpen(!isOpen)}

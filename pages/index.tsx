@@ -15,10 +15,15 @@ type Props = {
 
 function Home({ posts, images }: Props) {
   return (
-    <div className='relative min-h-screen px-4'>
-      <div className='h-80 w-full'></div>
+    <div className='relative min-h-screen'>
 
-      <div className='text-xl font-thin border-b py-8 border-neutral-200'>
+      {/* Hero image */}
+
+      <div className='h-80 w-full bg-blue-900/80'></div>
+
+      {/* Introduction */}
+
+      <div className='text-xl font-thin border-b py-6 border-blue-900 mx-3'>
         <p className=''>
           <span className='text-blue text-2xl'>
             Parkes Railway Bowling Club
@@ -38,7 +43,9 @@ function Home({ posts, images }: Props) {
         </p>
       </div>
 
-      <div className='h-full border-b py-8 border-neutral-200'>
+      {/* Recent carousel */}
+
+      <div className='h-full border-b py-8 border-blue-900 mx-3'>
         <div className='flex items-center justify-between'>
           <p className='text-4xl text-gray display-font font-semibold'>
             Recent Posts
@@ -50,9 +57,12 @@ function Home({ posts, images }: Props) {
         <RecentCarousel posts={posts} />
       </div>
 
-      <div className='flex flex-col py-8 border-b border-neutral-200'>
+      
+      {/* Quote */}
+
+      <div className='flex flex-col py-8 border-b border-blue-900 mx-3'>
         <p className='text-xl font-thin'>
-          <span className='text-blue'>
+          <span className='text-blue-900'>
             <FontAwesomeIcon icon={faQuoteLeft} size='2x' pull='left' transform='shrink-1' />
           </span>
           Bowling at the Railway Bowling Club is an experience to remember. Our
@@ -65,12 +75,16 @@ function Home({ posts, images }: Props) {
           </span>
         </p>
 
+        {/* Call to action */}
+
         <button className='self-center p-4 mt-8 rounded-lg bg-primary text-light font-semibold text-lg'>
           <Link href='/bowls'>Learn More</Link>
         </button>
       </div>
 
-      <div className='h-full py-8 border-b border-neutral-200'>
+      {/* Gallery */}
+
+      <div className='h-full py-8 border-b border-blue-900 mx-3'>
         <div className='flex items-center justify-between'>
           <p className='flex flex-col text-4xl text-gray outback-text font-bold'>
           <span className='text-lg text-blue font-thin'>

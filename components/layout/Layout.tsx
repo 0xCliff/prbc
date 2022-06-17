@@ -23,7 +23,9 @@ const Layout = ({ children }: Props) => {
       <Header />
       {children}
       <Footer />
-      <PrimaryNav />
+      <div className='lg:hidden'>
+        <PrimaryNav />
+      </div>
     </>
   );
 };

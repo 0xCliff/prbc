@@ -35,7 +35,7 @@ const GalleryCarousel = ({ images }: Props) => {
               layout='fill'
               alt={image.name}
               src={image.image.url}
-              className='pointer-events-none rounded-lg'
+              className='pointer-events-none rounded-lg '
             />
           </motion.div>
         ))}
