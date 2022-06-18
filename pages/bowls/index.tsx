@@ -33,10 +33,10 @@ const index = ({ posts, draws, results }: Props) => {
                   post.postType.includes('News') && (
                     <li className='py-1 flex'>
                       <Image
-                        src='/public/logo.png'
+                        src='/logo.png'
                         alt={post.title}
-                        height={50}
-                        width={80}
+                        height={30}
+                        width={30}
                         className='rounded'
                       />
                       <div className='pl-4'>{post.title}</div>
