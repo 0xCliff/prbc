@@ -19,7 +19,7 @@ function Home({ posts, images }: Props) {
 
       {/* Hero image */}
 
-      <div className='h-80 w-full bg-blue-900/80'></div>
+      <div className='h-80 w-full'></div>
 
       {/* Introduction */}
 

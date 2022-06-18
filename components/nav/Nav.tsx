@@ -6,12 +6,6 @@ import { motion } from 'framer-motion';
 import request from 'graphql-request';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import useSWR from 'swr';
-import RecentCarousel from '../carousel/RecentCarousel';
-
-const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
-
-const fetcher = (query: string) => request(graphqlAPI, query);
 
 type Props = {
   setIsOpen: any;
@@ -19,23 +13,6 @@ type Props = {
 
 const Nav = ({ setIsOpen }: Props) => {
   const [openMap, setOpenMap] = useState<boolean>(false);
-  const { data, error } = useSWR(
-    `{
-      posts(last: 4) {
-        id,
-        title,
-        excerpt,
-        slug,
-        featuredImg {
-          url
-        },
-        createdAt,
-      }
-    }`,
-    fetcher
-  );
-
-  if (error) return <div>Error</div>;
 
   return (
     <div className='flex flex-col justify-center bg-light fixed top-0 left-0 w-full min-h-screen z-20'>
@@ -43,12 +20,12 @@ const Nav = ({ setIsOpen }: Props) => {
         onClick={() => setIsOpen(false)}
         icon={faArrowRightFromArc}
         size='2x'
-        className='fixed top-6 right-4 text-blue'
+        className='fixed top-4 right-4 text-blue'
       />
 
-      <div className='my-8 h-60 list-none'>
+      <div className='my-2 list-none'>
         <nav className='flex flex-col items-center justify-center'>
-          <li className='text-4xl display-font mb-1'>
+          <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
               className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
@@ -56,7 +33,7 @@ const Nav = ({ setIsOpen }: Props) => {
               <Link href='/'>Home</Link>
             </button>
           </li>
-          <li className='text-4xl display-font mb-1'>
+          <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
               className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
@@ -64,7 +41,7 @@ const Nav = ({ setIsOpen }: Props) => {
               <Link href='/bowls'>Bowls</Link>
             </button>
           </li>
-          <li className='text-4xl display-font mb-1'>
+          <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
               className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
@@ -72,7 +49,7 @@ const Nav = ({ setIsOpen }: Props) => {
               <Link href='/restaurant'>Restaurant</Link>
             </button>
           </li>
-          <li className='text-4xl display-font mb-1'>
+          <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
               className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
@@ -80,7 +57,7 @@ const Nav = ({ setIsOpen }: Props) => {
               <Link href='/posts'>Club News</Link>
             </button>
           </li>
-          <li className='text-4xl display-font mb-1'>
+          <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
               className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
@@ -110,8 +87,8 @@ const Nav = ({ setIsOpen }: Props) => {
         className={`gmap-canvas ${openMap ? '' : 'hidden'}`}
         animate={{
           opacity: openMap ? 1 : 0,
-          marginBottom: '20px',
-          marginTop: '20px',
+          marginBottom: '10px',
+          marginTop: '10px',
         }}
         transition={{
           type: 'spring',
@@ -120,9 +97,9 @@ const Nav = ({ setIsOpen }: Props) => {
       >
         <iframe
           width='100%'
-          height='350'
+          height='300'
           id='gmap_canvas'
-          src='https://maps.google.com/maps?q=parkes%20railway%20bowling%20club&t=&z=17&ie=UTF8&iwloc=&output=embed'
+          src='https://maps.google.com/maps?q=parkes%20railway%20bowling%20club&t=&z=15&ie=UTF8&iwloc=&output=embed'
           frameBorder='0'
           scrolling='no'
         ></iframe>
