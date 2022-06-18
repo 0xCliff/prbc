@@ -30,7 +30,7 @@ function Home({ posts, images }: Props) {
       <div className='w-full grid grid-cols-2'>
         <div
           key={recentPosts[0].id}
-          className='h-60 w-full relative shadow-md
+          className='h-80 w-full relative shadow-md
             bg-gradient-to-t from-black via-black/30 col-span-2 flex border-b border-white'
         >
           <Image
@@ -57,7 +57,7 @@ function Home({ posts, images }: Props) {
 
         <div
           key={recentPosts[1].id}
-          className='h-60 w-full relative shadow-md
+          className='h-64 w-full relative shadow-md
             bg-gradient-to-t from-black via-black/30 flex border-r border-white'
         >
           <Image
@@ -84,7 +84,7 @@ function Home({ posts, images }: Props) {
 
         <div
           key={recentPosts[2].id}
-          className='h-60 w-full relative shadow-md
+          className='h-64 w-full relative shadow-md
             bg-gradient-to-t from-black via-black/30 flex'
         >
           <Image
