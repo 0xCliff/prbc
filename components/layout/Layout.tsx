@@ -3,7 +3,6 @@ import React from 'react';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import Script from 'next/script';
-import PrimaryNav from '../nav/PrimaryNav';
 
 type Props = {
   children: any;
@@ -23,9 +22,6 @@ const Layout = ({ children }: Props) => {
       <Header />
       {children}
       <Footer />
-      <div className='lg:hidden'>
-        <PrimaryNav />
-      </div>
     </>
   );
 };
