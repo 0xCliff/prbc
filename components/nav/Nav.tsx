@@ -19,7 +19,7 @@ const Nav = ({ setIsOpen }: Props) => {
       <FontAwesomeIcon
         onClick={() => setIsOpen(false)}
         icon={faArrowRightFromArc}
-        size='2x'
+        size='lg'
         className='fixed top-4 right-4 text-blue'
       />
 
@@ -28,7 +28,7 @@ const Nav = ({ setIsOpen }: Props) => {
           <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
-              className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
+              className='px-4 py-1 bg-primary rounded text-light font-semibold shadow-md'
             >
               <Link href='/'>Home</Link>
             </button>
@@ -36,7 +36,7 @@ const Nav = ({ setIsOpen }: Props) => {
           <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
-              className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
+              className='px-4 py-1 bg-primary rounded text-light font-semibold shadow-md'
             >
               <Link href='/bowls'>Bowls</Link>
             </button>
@@ -44,7 +44,7 @@ const Nav = ({ setIsOpen }: Props) => {
           <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
-              className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
+              className='px-4 py-1 bg-primary rounded text-light font-semibold shadow-md'
             >
               <Link href='/restaurant'>Restaurant</Link>
             </button>
@@ -52,7 +52,7 @@ const Nav = ({ setIsOpen }: Props) => {
           <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
-              className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
+              className='px-4 py-1 bg-primary rounded text-light font-semibold shadow-md'
             >
               <Link href='/posts'>Club News</Link>
             </button>
@@ -60,7 +60,7 @@ const Nav = ({ setIsOpen }: Props) => {
           <li className='text-3xl display-font mb-1'>
             <button
               onClick={() => setIsOpen(false)}
-              className='px-6 py-1 bg-primary rounded-lg text-light font-semibold shadow-md'
+              className='px-4 py-1 bg-primary rounded text-light font-semibold shadow-md'
             >
               <Link href='/posts/events'>Events</Link>
             </button>
@@ -72,7 +72,7 @@ const Nav = ({ setIsOpen }: Props) => {
         <a href='https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F642402229175922%2F'>
           <FontAwesomeIcon
             icon={faFacebookSquare}
-            size='4x'
+            size='3x'
             className='text-blue'
           />
         </a>

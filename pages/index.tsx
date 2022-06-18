@@ -1,8 +1,4 @@
-import {
-  faClock,
-  faQuoteLeft,
-  faQuoteRight,
-} from '@fortawesome/pro-duotone-svg-icons';
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/pro-duotone-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
@@ -30,7 +26,7 @@ function Home({ posts, images }: Props) {
       <div className='w-full grid grid-cols-2'>
         <div
           key={recentPosts[0].id}
-          className='h-80 w-full relative shadow-md
+          className='h-[18rem] w-full relative shadow-md
             bg-gradient-to-t from-black via-black/30 col-span-2 flex border-b border-white'
         >
           <Image
@@ -112,7 +108,7 @@ function Home({ posts, images }: Props) {
 
       {/* Introduction */}
 
-      <div className='text-xl font-thin border-b py-6 border-blue-900 mx-3'>
+      <div className='text-xl text-center font-thin border-b py-6 border-blue-900 mx-3'>
         <p className=''>
           <span className='text-blue text-2xl'>
             Parkes Railway Bowling Club
@@ -132,9 +128,61 @@ function Home({ posts, images }: Props) {
         </p>
       </div>
 
+      {/* Posts */}
+
+      <div className='py-6'>
+        <div className='h-60 w-full px-4'>
+          <h4 className='display-font font-semibold text-3xl text-blue-800'>
+            News
+          </h4>
+          <ul className=''>
+            {posts &&
+              posts.map(
+                (post) =>
+                  post.postType.includes('News') && (
+                    <li className='py-1 flex'>
+                      <Image
+                        src={post.featuredImg.url}
+                        alt={post.title}
+                        height={50}
+                        width={80}
+                        className='rounded'
+                      />
+                      <div className='pl-4'>{post.title}</div>
+                    </li>
+                  )
+              )}
+          </ul>
+        </div>
+
+        <div className='h-60 w-full px-4'>
+          <h4 className='display-font font-semibold text-3xl text-blue-800'>
+            Events
+          </h4>
+          <ul className=''>
+            {posts &&
+              posts.map(
+                (post) =>
+                  post.postType.includes('Events') && (
+                    <li className='py-1 flex'>
+                      <Image
+                        src={post.featuredImg.url}
+                        alt={post.title}
+                        height={50}
+                        width={80}
+                        className='rounded'
+                      />
+                      <div className='pl-4'>{post.title}</div>
+                    </li>
+                  )
+              )}
+          </ul>
+        </div>
+      </div>
+
       {/* Quote */}
 
-      <div className='flex flex-col py-8 border-b border-blue-900 mx-3'>
+      <div className='flex flex-col py-6 border-b border-blue-900 mx-3'>
         <p className='text-xl font-thin'>
           <span className='text-blue-900'>
             <FontAwesomeIcon
@@ -157,17 +205,17 @@ function Home({ posts, images }: Props) {
             />
           </span>
         </p>
-
-        {/* Call to action */}
-
-        <button className='self-center p-4 mt-8 rounded-lg bg-primary text-light font-semibold text-lg'>
-          <Link href='/bowls'>Learn More</Link>
-        </button>
       </div>
+
+      {/* Call to action */}
+
+      {/* <button className='self-center p-4 mt-8 rounded-lg bg-primary text-light font-semibold text-lg'>
+          <Link href='/bowls'>Learn More</Link>
+        </button> */}
 
       {/* Gallery */}
 
-      <div className='h-full py-8 border-b border-blue-900 mx-3'>
+      <div className='h-full py-8 mx-3'>
         <div className='flex items-center justify-between'>
           <p className='flex flex-col text-4xl text-gray outback-text font-bold'>
             <span className='text-lg text-blue font-thin'>

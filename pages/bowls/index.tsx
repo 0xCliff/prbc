@@ -5,6 +5,7 @@ import React from 'react';
 import { BowlsCarousel, RecentCarousel } from '../../components';
 import { Post } from '../../index.dev';
 import { getPosts } from '../../services';
+import Image from 'next/image';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
@@ -21,13 +22,32 @@ const index = ({ posts, draws, results }: Props) => {
 
   return (
     <div className='px-4'>
-      <div className='h-80 w-full'></div>
+      <div className='h-60 w-full px-4'>
+          <h4 className='display-font font-semibold text-3xl text-blue-800'>
+            Draw
+          </h4>
+          <ul className=''>
+            {posts &&
+              posts.map(
+                (post) =>
+                  post.postType.includes('News') && (
+                    <li className='py-1 flex'>
+                      <Image
+                        src='/public/logo.png'
+                        alt={post.title}
+                        height={50}
+                        width={80}
+                        className='rounded'
+                      />
+                      <div className='pl-4'>{post.title}</div>
+                    </li>
+                  )
+              )}
+          </ul>
+        </div>
 
       <div className='py-8 text-xl font-thin'>
-        <p>
-            The Railway Bowling Club
-          is a fun social and recreational club.
-        </p>
+        <p>The Railway Bowling Club is a fun social and recreational club.</p>
         <p className='pt-4 border-b border-neutral-200 pb-8'>
           Bowling at the railway bowling club, you will experience the
           hospitality and friendly atmosphere that is typical of Parkes, We
@@ -40,18 +60,6 @@ const index = ({ posts, draws, results }: Props) => {
 
       <div className='pb-8 border-b border-neutral-200'>
         <div>
-          <div className='flex items-center justify-between'>
-            <p className='text-4xl text-gray display-font font-semibold'>
-              Draw
-            </p>
-            <Link href='/posts' passHref>
-              <span className='text-blue font-thin'>- View all posts</span>
-            </Link>
-          </div>
-          <div className='h-full w-full p-4 pl-2'>
-            <BowlsCarousel data={draws} />
-          </div>
-
           <div className='flex items-center justify-between'>
             <p className='text-4xl text-gray display-font font-semibold'>
               Results
