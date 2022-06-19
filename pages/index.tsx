@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import React from 'react';
-import { GalleryCarousel } from '../components';
+import { GalleryCarousel, RecentCarousel } from '../components';
 import { Gallery, Post } from '../index.dev';
 import { getPosts } from '../services';
 import getGalleryImages from '../services/graphql/getGalleryImages';
@@ -24,86 +24,92 @@ function Home({ posts, images }: Props) {
       {/* Recent */}
 
       <div className='w-full grid grid-cols-2'>
-        <div
-          key={recentPosts[0].id}
-          className='h-[18rem] w-full relative shadow-md
-            bg-gradient-to-t from-black via-black/30 col-span-2 flex border-b border-white'
-        >
-          <Image
-            layout='fill'
-            alt={recentPosts[0].title}
-            src={recentPosts[0].featuredImg.url}
-            className='-z-10 pointer-events-none object-cover'
-          />
-          <div className='self-end pb-4 w-full text-center'>
-            <p className='text-md text-light p-1 font-bold'>
-              {recentPosts[0].title}
-            </p>
-            <p className='text-light text-xs'>
-              <FontAwesomeIcon
-                icon={faClockRotateLeft}
-                size='lg'
-                className='pr-2'
-                swapOpacity
-              />{' '}
-              {moment(recentPosts[0].createdAt).format('MMMM Do YYYY')}
-            </p>
+        <Link href={`posts/${recentPosts[0].slug}`} passHref>
+          <div
+            key={recentPosts[0].id}
+            className='h-[17rem] w-full relative shadow-md
+            bg-gradient-to-t from-neutral-900 via-transparent col-span-2 flex border-b border-white'
+          >
+            <Image
+              layout='fill'
+              alt={recentPosts[0].title}
+              src={recentPosts[0].featuredImg.url}
+              className='-z-10 pointer-events-none object-cover'
+            />
+            <div className='self-end pb-4 w-full text-center'>
+              <p className='text-md text-light p-1 font-bold'>
+                {recentPosts[0].title}
+              </p>
+              <p className='text-light text-xs'>
+                <FontAwesomeIcon
+                  icon={faClockRotateLeft}
+                  size='lg'
+                  className='pr-2'
+                  swapOpacity
+                />{' '}
+                {moment(recentPosts[0].createdAt).format('MMMM Do YYYY')}
+              </p>
+            </div>
           </div>
-        </div>
+        </Link>
 
-        <div
-          key={recentPosts[1].id}
-          className='h-64 w-full relative shadow-md
-            bg-gradient-to-t from-black via-black/30 flex border-r border-white'
-        >
-          <Image
-            layout='fill'
-            alt={recentPosts[1].title}
-            src={recentPosts[1].featuredImg.url}
-            className='-z-10 pointer-events-none object-cover'
-          />
-          <div className='self-end pb-4 w-full text-center px-4'>
-            <p className='text-md text-light p-1 font-bold'>
-              {recentPosts[1].title}
-            </p>
-            <p className='text-light text-xs'>
-              <FontAwesomeIcon
-                icon={faClockRotateLeft}
-                size='lg'
-                className='pr-2'
-                swapOpacity
-              />{' '}
-              {moment(recentPosts[1].createdAt).format('MMMM Do YYYY')}
-            </p>
+        <Link href={`posts/${recentPosts[1].slug}`} passHref>
+          <div
+            key={recentPosts[1].id}
+            className='h-[15rem] w-full relative shadow-md
+            bg-gradient-to-t from-neutral-900 via-transparent flex border-r border-white'
+          >
+            <Image
+              layout='fill'
+              alt={recentPosts[1].title}
+              src={recentPosts[1].featuredImg.url}
+              className='-z-10 pointer-events-none object-cover'
+            />
+            <div className='self-end pb-4 w-full text-center px-4'>
+              <p className='text-md text-light p-1 font-bold'>
+                {recentPosts[1].title}
+              </p>
+              <p className='text-light text-xs'>
+                <FontAwesomeIcon
+                  icon={faClockRotateLeft}
+                  size='lg'
+                  className='pr-2'
+                  swapOpacity
+                />{' '}
+                {moment(recentPosts[1].createdAt).format('MMMM Do YYYY')}
+              </p>
+            </div>
           </div>
-        </div>
+        </Link>
 
-        <div
-          key={recentPosts[2].id}
-          className='h-64 w-full relative shadow-md
-            bg-gradient-to-t from-black via-black/30 flex'
-        >
-          <Image
-            layout='fill'
-            alt={recentPosts[2].title}
-            src={recentPosts[2].featuredImg.url}
-            className='-z-10 pointer-events-none object-cover'
-          />
-          <div className='self-end pb-4 w-full text-center px-4'>
-            <p className='text-md text-light p-1 font-bold'>
-              {recentPosts[2].title}
-            </p>
-            <p className='text-light text-xs'>
-              <FontAwesomeIcon
-                icon={faClockRotateLeft}
-                size='lg'
-                className='pr-2'
-                swapOpacity
-              />{' '}
-              {moment(recentPosts[2].createdAt).format('MMMM Do YYYY')}
-            </p>
+        <Link href={`posts/${recentPosts[2].slug}`} passHref>
+          <div
+            key={recentPosts[2].id}
+            className='h-[15rem] w-full relative shadow-md
+            bg-gradient-to-t from-neutral-900 via-transparent flex'
+          >
+            <Image
+              layout='fill'
+              alt={recentPosts[2].title}
+              src={recentPosts[2].featuredImg.url}
+              className='-z-10 pointer-events-none object-cover'
+            />
+            <div className='self-end pb-4 w-full text-center px-4'>
+              <p className='text-md text-light p-1 font-bold'>
+                {recentPosts[2].title}
+              </p>
+              <p className='text-light text-xs'>
+                <FontAwesomeIcon
+                  icon={faClockRotateLeft}
+                  size='lg'
+                  className='pr-2'
+                  swapOpacity
+                />{' '}
+                {moment(recentPosts[2].createdAt).format('MMMM Do YYYY')}
+              </p>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
 
       {/* Introduction */}
@@ -130,50 +136,37 @@ function Home({ posts, images }: Props) {
 
       {/* Posts */}
 
-      <div className='py-6'>
-        <div className='h-60 w-full px-4'>
+      <div className='py-2'>
+        <div className='h-full w-full px-4 mb-2'>
           <h4 className='display-font font-semibold text-3xl text-blue-800'>
-            News
+            Club News
           </h4>
-          <ul className=''>
-            {posts &&
-              posts.map(
-                (post) =>
-                  post.postType.includes('News') && (
-                    <li className='py-1 flex'>
-                      <Image
-                        src={post.featuredImg.url}
-                        alt={post.title}
-                        height={50}
-                        width={80}
-                        className='rounded'
-                      />
-                      <div className='pl-4'>{post.title}</div>
-                    </li>
-                  )
-              )}
-          </ul>
+          <div className='h-[25rem] -mt-8'>
+            <RecentCarousel posts={posts} />
+          </div>
         </div>
 
         <div className='h-60 w-full px-4'>
-          <h4 className='display-font font-semibold text-3xl text-blue-800'>
-            Events
+          <h4 className='display-font font-semibold text-3xl text-blue-800 pb-6'>
+            Upcoming Events
           </h4>
           <ul className=''>
             {posts &&
               posts.map(
                 (post) =>
                   post.postType.includes('Events') && (
-                    <li className='py-1 flex'>
-                      <Image
-                        src={post.featuredImg.url}
-                        alt={post.title}
-                        height={50}
-                        width={80}
-                        className='rounded'
-                      />
-                      <div className='pl-4'>{post.title}</div>
-                    </li>
+                    <Link href={`posts/${post.slug}`} passHref>
+                      <li className='py-1 flex'>
+                        <Image
+                          src={post.featuredImg.url}
+                          alt={post.title}
+                          height={50}
+                          width={80}
+                          className='rounded'
+                        />
+                        <div className='pl-4'>{post.title}</div>
+                      </li>
+                    </Link>
                   )
               )}
           </ul>

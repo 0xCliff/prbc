@@ -17,8 +17,8 @@ const Restaurant = ({ dishes, specials }: Props) => {
   const [mealType, setMealType] = useState<string>('Mains');
 
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-2 px-4'>
-      <h4 className='text-center outback-text text-6xl py-8 font-bold'>
+    <div className='grid grid-cols-1 lg:grid-cols-2 px-2'>
+      <h4 className='text-center outback-text text-6xl pt-4 font-bold'>
         Clubhouse Catering
       </h4>
 

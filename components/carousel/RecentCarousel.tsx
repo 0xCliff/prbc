@@ -33,8 +33,7 @@ const RecentCarousel = ({ posts }: Props) => {
             className='bg-light flex flex-col recent-item relative shadow-md rounded-lg mr-4 bg-gradient-to-b from-neutral-900/20 via-transparent'
           >
             <Image
-              height={150}
-              width={100}
+              layout='fill'
               alt={post.title}
               src={post.featuredImg.url}
               className='-z-10  rounded-t-lg pointer-events-none object-cover'
