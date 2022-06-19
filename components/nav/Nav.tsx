@@ -3,7 +3,6 @@ import { faMapLocationDot } from '@fortawesome/pro-duotone-svg-icons';
 import { faArrowRightFromArc } from '@fortawesome/pro-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
-import request from 'graphql-request';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -15,7 +14,7 @@ const Nav = ({ setIsOpen }: Props) => {
   const [openMap, setOpenMap] = useState<boolean>(false);
 
   return (
-    <div className='flex flex-col justify-center bg-light fixed top-0 left-0 w-full min-h-screen z-20'>
+    <div className='flex flex-col justify-center bg-light fixed top-0 left-0 w-full min-h-screen z-50'>
       <FontAwesomeIcon
         onClick={() => setIsOpen(false)}
         icon={faArrowRightFromArc}

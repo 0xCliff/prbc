@@ -3,3 +3,4 @@ export { default as postComment } from './graphql/postComment';
 export { default as getComments } from './graphql/getComments';
 export { default as getSpecials } from './graphql/getSpecials';
 export { default as getPosts } from './graphql/getPosts';
+export { default as getPostDetails } from './graphql/getPostDetails';

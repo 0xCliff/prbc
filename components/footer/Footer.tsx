@@ -9,11 +9,11 @@ const Footer = () => {
 
   return (
     <div className='bg-light relative'>
-      <div className='text-blue flex flex-col items-center justify-center px-4'>
-        <h2 className='text-6xl text-dark display-font font-semibold py-8'>
+      <div className='text-blue flex flex-col items-center justify-center px-2'>
+        <h2 className='text-6xl text-dark display-font font-semibold py-4'>
           PRBC
         </h2>
-        <table className='table-fixed mb-8 w-80'>
+        <table className='table-fixed mb-2 w-80'>
           <tbody>
             <tr>
               <td className='text-dark'>Monday</td>
@@ -54,7 +54,7 @@ const Footer = () => {
       </div>
 
       <p
-        className='text-center text-dark text-lg px-4 pb-20 py-4'
+        className='text-center text-dark text-lg px-2 py-4'
       >
         If you&apos;d like to contact us, please feel free to give us a call at{' '}
         <span className='text-blue'>(02) 6862 2772</span>.

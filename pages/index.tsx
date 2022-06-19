@@ -65,7 +65,7 @@ function Home({ posts, images }: Props) {
               src={recentPosts[1].featuredImg.url}
               className='-z-10 pointer-events-none object-cover'
             />
-            <div className='self-end pb-4 w-full text-center px-4'>
+            <div className='self-end pb-4 w-full text-center px-2'>
               <p className='text-md text-light p-1 font-bold'>
                 {recentPosts[1].title}
               </p>
@@ -94,7 +94,7 @@ function Home({ posts, images }: Props) {
               src={recentPosts[2].featuredImg.url}
               className='-z-10 pointer-events-none object-cover'
             />
-            <div className='self-end pb-4 w-full text-center px-4'>
+            <div className='self-end pb-4 w-full text-center px-2'>
               <p className='text-md text-light p-1 font-bold'>
                 {recentPosts[2].title}
               </p>
@@ -137,7 +137,7 @@ function Home({ posts, images }: Props) {
       {/* Posts */}
 
       <div className='py-2'>
-        <div className='h-full w-full px-4 mb-2'>
+        <div className='h-full w-full px-2 mb-2'>
           <h4 className='display-font font-semibold text-3xl text-blue-800'>
             Club News
           </h4>
@@ -146,7 +146,7 @@ function Home({ posts, images }: Props) {
           </div>
         </div>
 
-        <div className='h-60 w-full px-4'>
+        <div className='h-60 w-full px-2'>
           <h4 className='display-font font-semibold text-3xl text-blue-800 pb-6'>
             Upcoming Events
           </h4>

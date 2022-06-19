@@ -29,10 +29,10 @@ const index = ({ posts }: Props) => {
                   <Link href={`posts/${post.slug}`} passHref>
                     <li key={post.id} className='py-1 flex'>
                       <Image
-                        src='/logo.png'
+                        src={post.featuredImg.url}
                         alt={post.title}
                         height={50}
-                        width={50}
+                        width={80}
                         className='rounded'
                       />
                       <div className='pl-4'>{post.title}</div>
@@ -68,10 +68,10 @@ const index = ({ posts }: Props) => {
                     <Link href={`posts/${post.slug}`} passHref>
                       <li key={post.id} className='py-1 flex'>
                         <Image
-                          src='/logo.png'
+                          src={post.featuredImg.url}
                           alt={post.title}
                           height={50}
-                          width={50}
+                          width={80}
                           className='rounded'
                         />
                         <div className='pl-4'>{post.title}</div>

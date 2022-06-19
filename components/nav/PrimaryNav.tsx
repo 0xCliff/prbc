@@ -4,38 +4,39 @@ import {
   faScrubber,
 } from '@fortawesome/pro-duotone-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import React from 'react';
 
 const PrimaryNav = () => {
   return (
-    <div className='fixed bottom-0 flex items-center w-full h-20 bg-light text-blue'>
+    <div className='sticky top-10 flex items-center w-full h-20 bg-light text-blue'>
       <div className='flex flex-col text-md items-center justify-center w-[33%] h-full'>
         <span>Bowls</span>
-        <a href='/bowls'>
+        <Link href='/bowls' passHref>
           <FontAwesomeIcon icon={faScrubber} size='2x' />
-        </a>
+        </Link>
       </div>
       <div className='flex flex-col text-md items-center justify-center w-[33%] h-full'>
         <span>Home</span>
-        <a href='/'>
+        <Link href='/' passHref>
           <FontAwesomeIcon
             icon={faHouseChimney}
             size='2x'
             swapOpacity
             transform='shrink-1'
           />
-        </a>
+        </Link>
       </div>
       <div className='flex flex-col text-md items-center justify-center w-[33%] h-full'>
         <span>Restaurant</span>
-        <a href='/restaurant'>
+        <Link href='/restaurant' passHref>
           <FontAwesomeIcon
             icon={faForkKnife}
             size='2x'
             swapOpacity
             transform='shrink-2'
           />
-        </a>
+        </Link>
       </div>
     </div>
   );

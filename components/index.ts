@@ -8,3 +8,4 @@ export { default as BowlsCarousel } from './carousel/BowlsCarousel';
 export { default as DishCard } from './card/DishCard';
 export { default as Nav } from './nav/Nav';
 export { default as PrimaryNav } from './nav/PrimaryNav';
+export { default as Loader } from './loader/Loader';

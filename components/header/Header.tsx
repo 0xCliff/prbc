@@ -14,8 +14,8 @@ function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <>
-      <header className='sticky z-10 w-full top-0 bg-blue-900 px-4 h-12 flex justify-between'>
+    <header className='sticky z-10 w-full top-0'>
+      <div className='w-full bg-blue-900 px-4 h-12 flex justify-between'>
         <div className='text-light self-center'>PRBC</div>
         <div className='self-center'>
           <button
@@ -26,9 +26,9 @@ function Header() {
           </button>
         </div>
         {isOpen && <Nav setIsOpen={setIsOpen} />}
-      </header>
+      </div>
 
-      <div className='h-10 bg-blue-800 text-light flex items-center'>
+      <div className='h-10 sticky top-12 w-full bg-blue-800 text-light flex items-center mb-[0.25px]'>
         <div className='flex text-xs items-center justify-center w-[33%] h-full'>
           <Link href='/bowls' passHref>
             <p>
@@ -56,7 +56,7 @@ function Header() {
           </Link>
         </div>
       </div>
-    </>
+    </header>
   );
 }
 
