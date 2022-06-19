@@ -5,6 +5,7 @@ import { RecentCarousel } from '../../components';
 import { Post } from '../../index.dev';
 import { getPosts } from '../../services';
 import Image from 'next/image';
+import moment from 'moment';
 
 type Props = {
   posts: Post[];
@@ -17,7 +18,19 @@ const index = ({ posts }: Props) => {
 
   return (
     <div className='px-2'>
-      <div className='h-60 w-full px-2'>
+      <div className='py-6 text-xl font-thin'>
+        <p>The Railway Bowling Club is a fun social and recreational club.</p>
+        <p className='pt-4 border-b border-neutral-200 pb-8'>
+          Bowling at the railway bowling club, you will experience the
+          hospitality and friendly atmosphere that is typical of Parkes, We
+          provide championship level lawn bowling with great club pride and
+          skill. Our great atmosphere and full-featured facility, including cold
+          drinks, plenty of shade and seating for everyone, will ensure you have
+          a great time.
+        </p>
+      </div>
+
+      <div className='h-80 w-full px-2'>
         <h4 className='display-font font-semibold text-3xl text-blue-800 my-4'>
           Latest Draw
         </h4>
@@ -35,7 +48,12 @@ const index = ({ posts }: Props) => {
                         width={80}
                         className='rounded'
                       />
-                      <div className='pl-4'>{post.title}</div>
+                      <div className='pl-4'>
+                        <p>{post.title}</p>
+                        <span>
+                          {moment(post.createdAt).format('DD MMM, YYYY')}
+                        </span>
+                      </div>
                     </li>
                   </Link>
                 )
@@ -43,20 +61,8 @@ const index = ({ posts }: Props) => {
         </ul>
       </div>
 
-      <div className='py-6 text-xl font-thin'>
-        <p>The Railway Bowling Club is a fun social and recreational club.</p>
-        <p className='pt-4 border-b border-neutral-200 pb-8'>
-          Bowling at the railway bowling club, you will experience the
-          hospitality and friendly atmosphere that is typical of Parkes, We
-          provide championship level lawn bowling with great club pride and
-          skill. Our great atmosphere and full-featured facility, including cold
-          drinks, plenty of shade and seating for everyone, will ensure you have
-          a great time.
-        </p>
-      </div>
-
       <div className='pb-4 border-b border-neutral-200'>
-        <div className='h-60 w-full px-2'>
+        <div className='h-80 w-full px-2'>
           <h4 className='display-font font-semibold text-3xl text-blue-800 my-4'>
             Latest Results
           </h4>
@@ -74,7 +80,12 @@ const index = ({ posts }: Props) => {
                           width={80}
                           className='rounded'
                         />
-                        <div className='pl-4'>{post.title}</div>
+                        <div className='pl-4'>
+                          <p>{post.title}</p>
+                          <span>
+                            {moment(post.createdAt).format('DD MMM, YYYY')}
+                          </span>
+                        </div>
                       </li>
                     </Link>
                   )

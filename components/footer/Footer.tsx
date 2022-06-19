@@ -1,7 +1,5 @@
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
-import { faMapLocationDot } from '@fortawesome/pro-duotone-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 
 const Footer = () => {
@@ -10,7 +8,7 @@ const Footer = () => {
   return (
     <div className='bg-light relative'>
       <div className='text-blue flex flex-col items-center justify-center px-2'>
-        <h2 className='text-6xl text-dark display-font font-semibold py-4'>
+        <h2 className='text-5xl text-blue-800 display-font font-semibold py-4'>
           PRBC
         </h2>
         <table className='table-fixed mb-2 w-80'>

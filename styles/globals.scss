@@ -2,22 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .display-font {
-  font-family: 'Poiret One', cursive;
-}
-
-.outback-text {
-  font-family: 'Poiret One', cursive;
+  font-family: 'Helvetica', cursive;
 }
 
 .text-shadow {
