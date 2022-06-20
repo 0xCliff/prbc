@@ -44,7 +44,7 @@ const index = ({ posts, images }: Props) => {
           ))}
       </div>
 
-      <div className='py-6 text-center'>
+      <div className='py-6 text-center border-b border-blue-800'>
         <p className='text-xl'>
           The Railway Bowling Club is an entertaining social, and recreational
           bowling club.
@@ -57,7 +57,7 @@ const index = ({ posts, images }: Props) => {
           pm.
         </p>
         
-        <div className='h-80 w-full border-t border-blue-800 pt-4'>
+        <div className='h-80 w-full border-b border-blue-800 py-6'>
         <div className='flex items-center justify-between'>
           <p className='flex flex-col text-3xl text-gray outback-text font-bold mb-4'>
             <span className='text-lg text-blue font-thin'>Latest</span> Draw
