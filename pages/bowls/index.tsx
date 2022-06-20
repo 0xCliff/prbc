@@ -49,7 +49,7 @@ const index = ({ posts, images }: Props) => {
           The Railway Bowling Club is an entertaining social, and recreational
           bowling club.
         </p>
-        <p className='text-xl pt-2'>
+        <p className='text-xl py-2 border-b border-blue-800'>
           You will experience the hospitality and friendly atmosphere typical of
           Parkes when bowling at the railway bowling club. We offer social
           barefoot bowls organised by the club; on Wednesdays and Saturdays at 1
@@ -57,7 +57,7 @@ const index = ({ posts, images }: Props) => {
           pm.
         </p>
         
-        <div className='h-80 w-full border-b border-blue-800 py-6'>
+        <div className='h-80 w-full border-b border-blue-800 my-4'>
         <div className='flex items-center justify-between'>
           <p className='flex flex-col text-3xl text-gray outback-text font-bold mb-4'>
             <span className='text-lg text-blue font-thin'>Latest</span> Draw
@@ -108,7 +108,7 @@ const index = ({ posts, images }: Props) => {
         </p>
       </div>
 
-      <div className='pb-4'>
+      <div className='my-4'>
         <div className='h-80 w-full'>
           <div className='flex items-center justify-between'>
             <p className='flex flex-col text-3xl text-gray outback-text font-bold mb-4'>
