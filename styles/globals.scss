@@ -40,8 +40,8 @@ min-width: 17.5rem;
 
 
 .gallery-item {
-  min-height: 25rem;
-  min-width: 25rem;
+  min-height: 22rem;
+  min-width: 20rem;
 }
 
 .bowls-item {
@@ -55,7 +55,7 @@ min-width: 17.5rem;
   } 
 
   .bg-red {
-    @apply bg-red-400;
+    @apply bg-red-600;
   } 
 
   .bg-light {
@@ -71,7 +71,7 @@ min-width: 17.5rem;
   }
 
   .text-red {
-    @apply text-red-400;
+    @apply text-red-600;
   }
 
   .text-dark {

@@ -39,9 +39,9 @@ const RecentCarousel = ({ posts }: Props) => {
               src={post.featuredImg.url}
               className='rounded-t-lg pointer-events-none object-cover'
             />
-            <div className='h-40 flex flex-col items-center absolute bottom-2 text-sm text-dark p-2'>
+            <div className='h-40 w-full flex flex-col items-center absolute bottom-2 text-sm text-dark p-2'>
               <p className='self-start text-blue text-xl pb-2'>{post.title}</p>
-              <p className='text-gray h-24 overflow-auto mb-2'>{post.excerpt}</p>
+              <p className='text-gray h-24 overflow-hidden mb-2'>{post.excerpt}</p>
               <span className='justify-center shadow-md bg-primary p-2 rounded text-light font-semibold'>
                 <Link href={`/posts/${post.slug}`}>Read</Link>
               </span>

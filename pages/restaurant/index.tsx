@@ -18,49 +18,48 @@ const Restaurant = ({ dishes, specials }: Props) => {
 
   return (
     <div className='grid grid-cols-1 lg:grid-cols-2 px-2'>
-      <h4 className='text-center outback-text text-6xl pt-4 font-bold'>
+      <h4 className='text-center text-dark text-5xl pt-4 font-bold'>
         Clubhouse Catering
       </h4>
 
       <div className='h-full w-full py-8'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <p className='text-4xl text-gray outback-text font-bold'>Specials</p>
+        <p className='text-3xl text-gray font-bold'>Specials</p>
         <SpecialsCarousel specials={specials} />
       </div>
 
-      <p className='text-lg text-dark'>
-        <span className='text-red text-xl'>
-          Welcome to the Clubhouse Bar & Eatery,
-        </span>{' '}
-        the place to be for delicious homecooked meals. Whether you&apos;re
-        looking for a romantic evening out, a birthday party for your kids, or a
-        fun family outing for the whole gang, we&apos;ve got you covered. Our
-        catered functions are perfect for any occasion and we&apos;re excited to
-        meet you!
+      <p className='text-xl text-dark text-center'>
+        Welcome to the Clubhouse Bar & Eatery, the place to be for delicious
+        homecooked meals. Whether you&apos;re looking for a romantic evening
+        out, a birthday party for your kids, or a fun family outing for the
+        whole gang, we&apos;ve got you covered. Our catered functions are
+        perfect for any occasion and we&apos;re excited to meet you!
       </p>
-      <p className='text-lg text-dark pt-4'>
+      <p className='text-xl text-dark pt-4 text-center'>
         We know you&apos;ll love our social bar and raffles as much as our
         scrumptious menu items. Come in and try our famous chicken Schnitznel or
         our succulent steaks today!
       </p>
 
       <div className='border-b border-neutral-200 py-8'>
-        <p className='text-4xl text-center text-gray outback-text font-bold underline decoration-red-400'>
+        <p className='text-3xl text-center text-gray font-bold underline decoration-red-600'>
           Open Hours
         </p>
         <table className='p-2 my-8 table-fixed w-full text-red '>
           <tbody>
             <tr className='flex flex-col w-full'>
-              <td className='text-dark underline decoration-red-400'>Friday</td>
+              <td className='text-dark text-lg underline decoration-red-600'>Friday</td>
               <td className='w-40'>6:00pm - 8:30pm</td>
             </tr>
             <tr className='flex flex-col w-full pt-4'>
-              <td className='text-dark underline decoration-red-400'>Saturday</td>
+              <td className='text-dark text-lg underline decoration-red-600'>
+                Saturday
+              </td>
               <td>12:00pm - 2:30pm,</td>
               <td>6:00pm - 8:30pm</td>
             </tr>
             <tr className='flex flex-col w-full pt-4'>
-              <td className='text-dark underline decoration-red-400'>Sunday</td>
+              <td className='text-dark text-lg underline decoration-red-600'>Sunday</td>
               <td>12:00pm - 2:30pm</td>
             </tr>
           </tbody>
@@ -74,7 +73,7 @@ const Restaurant = ({ dishes, specials }: Props) => {
 
       <div className='py-8'>
         <span className='text-lg text-red font-thin'>From the</span>
-        <p className='text-4xl text-gray display-font font-semibold'>Menu</p>
+        <p className='text-3xl text-gray font-semibold'>Menu</p>
 
         <div className='flex items-center justify-center'>
           <div className=''>

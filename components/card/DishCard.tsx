@@ -32,7 +32,7 @@ const DishCard = ({ dish }: Props) => {
           )}
           ${dish.price.toFixed(2)}
         </p>
-        <p className='text-sm text-dark'>{dish.description}</p>
+        <p className='text-sm text-dark overflow-hidden'>{dish.description}</p>
       </div>
     </div>
   );

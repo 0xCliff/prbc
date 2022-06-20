@@ -86,8 +86,8 @@ const CommentsForm = ({ slug }: Props) => {
         />
       </div>
 
-      <div className='grid grid-cols-1 gap-2 mt-4 mb-2'>
-        <div className='flex items-center'>
+      <div className='grid grid-cols-1 gap-2 my-4'>
+        <div className=''>
           <input
             type='checkbox'
             ref={storeDataEl}
@@ -107,7 +107,7 @@ const CommentsForm = ({ slug }: Props) => {
         <button
           type='button'
           onClick={handleCommentSubmission}
-          className='bg-blue-800 text-light lg:hover:color-secondary lg:color-secondary-opacity inline-block cursor-pointer rounded px-2 py-1 lg:transform lg:transition lg:duration-300 text-sm'
+          className='w-40 bg-blue-800 text-light inline-block cursor-pointer rounded py-1 justify-self-center'
         >
           Post Reply
         </button>

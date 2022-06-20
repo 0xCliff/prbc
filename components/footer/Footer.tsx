@@ -6,12 +6,12 @@ const Footer = () => {
   const [openMap, setOpenMap] = useState<boolean>(false);
 
   return (
-    <div className='bg-light relative'>
+    <div className='bg-light relative border-t border-neutral-200'>
       <div className='text-blue flex flex-col items-center justify-center px-2'>
-        <h2 className='text-5xl text-blue-800 display-font font-semibold py-4'>
+        <h2 className='text-5xl text-gray font-semibold py-4'>
           PRBC
         </h2>
-        <table className='table-fixed mb-2 w-80'>
+        <table className='table-fixed mb-6 w-80'>
           <tbody>
             <tr>
               <td className='text-dark'>Monday</td>

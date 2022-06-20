@@ -9,14 +9,32 @@ import {
   faScrubber,
 } from '@fortawesome/pro-duotone-svg-icons';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scroll, setScroll] = useState<boolean>(false);
+
+  if (typeof window !== 'undefined') {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        setScroll(false);
+      } else {
+        setScroll(true);
+      }
+      prevScrollpos = currentScrollPos;
+    };
+  }
 
   return (
     <header className='sticky z-10 w-full top-0'>
       <div className='w-full bg-blue-900 px-4 h-12 flex justify-between'>
-        <div className='text-light self-center'>PRBC</div>
+        <div className='text-light flex items-center'>
+          <Image src='/logo.png' alt='Logo' height={40} width={44} />
+          <span className='text-light pl-2'>PRBC</span>
+        </div>
         <div className='self-center'>
           <button
             className='text-light cursor-pointer'
@@ -28,7 +46,11 @@ function Header() {
         {isOpen && <Nav setIsOpen={setIsOpen} />}
       </div>
 
-      <div className='h-10 sticky top-12 w-full bg-blue-800 text-light flex items-center mb-[0.25px]'>
+      <motion.div
+        animate={{ opacity: scroll ? 0 : 1, y: scroll ? -10 : 0 }}
+        transition={{ type: 'spring', stiffness: 60 }}
+        className='h-10 sticky top-12 w-full bg-blue-800 text-light flex items-center mb-[0.25px]'
+      >
         <div className='flex text-xs items-center justify-center w-[33%] h-full'>
           <Link href='/bowls' passHref>
             <p>
@@ -55,7 +77,7 @@ function Header() {
             </p>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 }

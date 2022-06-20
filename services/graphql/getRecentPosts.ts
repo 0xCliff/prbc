@@ -5,7 +5,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 const getPosts = async () => {
   const query = gql`
     query getPosts {
-      posts() {
+      posts(last: 5, orderBy: createdAt_DESC) {
         id
         title
         excerpt
