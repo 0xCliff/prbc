@@ -56,25 +56,8 @@ const index = ({ posts, images }: Props) => {
           pm, make sure to phone the club and have your name entered by 12:30
           pm.
         </p>
-        <p className='text-xl pt-2'>
-          We also boast competitive club championship tournaments and pennants
-          teams. Our club has had many successful members over the years,
-          representing our club with tremendous pride and skill. We constantly
-          seek new members to join our fantastic club.
-        </p>
-        <p className='text-xl pt-2'>
-          Our great atmosphere and full-featured facility, including cold
-          drinks, plenty of shade and seating for everyone, will ensure you have
-          a great time.
-        </p>
-        <p className='text-xl pt-4'>
-          <span className='text-blue'>Club President:</span> Tony Latter
-          <br />
-          <span className='text-blue'>Bowls Secretary:</span> Paul Lewin
-        </p>
-      </div>
-
-      <div className='h-80 w-full border-t border-blue-800 pt-4'>
+        
+        <div className='h-80 w-full border-t border-blue-800 pt-4'>
         <div className='flex items-center justify-between'>
           <p className='flex flex-col text-3xl text-gray outback-text font-bold mb-4'>
             <span className='text-lg text-blue font-thin'>Latest</span> Draw
@@ -105,6 +88,24 @@ const index = ({ posts, images }: Props) => {
                 )
             )}
         </ul>
+      </div>
+        
+        <p className='text-xl pt-4'>
+          We also boast competitive club championship tournaments and pennants
+          teams. Our club has had many successful members over the years,
+          representing our club with tremendous pride and skill. We constantly
+          seek new members to join our fantastic club.
+        </p>
+        <p className='text-xl pt-2'>
+          Our great atmosphere and full-featured facility, including cold
+          drinks, plenty of shade and seating for everyone, will ensure you have
+          a great time.
+        </p>
+        <p className='text-xl pt-4'>
+          <span className='text-blue'>Club President:</span> Tony Latter
+          <br />
+          <span className='text-blue'>Bowls Secretary:</span> Paul Lewin
+        </p>
       </div>
 
       <div className='pb-4'>
