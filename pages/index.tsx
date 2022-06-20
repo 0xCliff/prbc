@@ -9,7 +9,6 @@ import Image from 'next/image';
 import { faClockRotateLeft } from '@fortawesome/pro-solid-svg-icons';
 import moment from 'moment';
 import { getGalleryImages, getRecentPosts } from '../services';
-import { motion } from 'framer-motion';
 
 type Props = {
   posts: Post[];
@@ -26,7 +25,7 @@ function Home({ posts, images }: Props) {
           <div
             key={posts[0].id}
             className='h-[17rem] w-full relative shadow-md
-            bg-gradient-to-t from-black/80 via-neutral-700/20 col-span-2 flex border-b border-white'
+             gradient col-span-2 flex border-b border-white'
           >
             <Image
               layout='fill'
@@ -55,7 +54,7 @@ function Home({ posts, images }: Props) {
           <div
             key={posts[1].id}
             className='h-[16rem] w-full relative shadow-md
-            bg-gradient-to-t from-black/80 via-neutral-700/20 flex border-r border-white'
+             gradient flex border-r border-white'
           >
             <Image
               layout='fill'
@@ -84,7 +83,7 @@ function Home({ posts, images }: Props) {
           <div
             key={posts[2].id}
             className='h-[16rem] w-full relative shadow-md
-            bg-gradient-to-t from-black/80 via-neutral-700/20 flex'
+            gradient flex'
           >
             <Image
               layout='fill'
@@ -163,7 +162,7 @@ function Home({ posts, images }: Props) {
               posts.map(
                 (post) =>
                   post.postType.includes('Events') && (
-                    <Link href={`posts/${post.slug}`} passHref>
+                    <Link key={post.id} href={`posts/${post.slug}`} passHref>
                       <li key={post.id} className='py-1 flex'>
                         <Image
                           src={post.featuredImg.url}

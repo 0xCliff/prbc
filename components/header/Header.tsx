@@ -18,7 +18,7 @@ function Header() {
   if (typeof window !== 'undefined') {
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
-      let currentScrollPos = window.pageYOffset;
+      let currentScrollPos = window.pageYOffset - 10;
       if (prevScrollpos > currentScrollPos) {
         setScroll(false);
       } else {
