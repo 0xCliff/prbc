@@ -29,7 +29,7 @@ function Header() {
   }
 
   return (
-    <header className='fixed z-10 w-full top-0'>
+    <header className='sticky z-10 w-full top-0'>
       <div className='w-full bg-blue-900 px-4 h-12 flex justify-between'>
         <div className='text-light flex items-center'>
           <Image src='/logo.png' alt='Logo' height={40} width={44} />
@@ -49,7 +49,7 @@ function Header() {
       <motion.div
         animate={{ opacity: scroll ? 0 : 1, y: scroll ? -10 : 0 }}
         transition={{ type: 'spring', stiffness: 60 }}
-        className='h-10 fixed top-12 w-full bg-blue-800 text-light flex items-center mb-[0.25px]'
+        className='h-10 sticky top-12 w-full bg-blue-800 text-light flex items-center mb-[0.25px]'
       >
         <div className='flex text-xs items-center justify-center w-[33%] h-full'>
           <Link href='/bowls' passHref>
